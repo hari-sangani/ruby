@@ -6,10 +6,10 @@ n1, n2, n3 = n1.to_i, n2.to_i, n3.to_i
 count = 0
 result = Array[]
 for i in (n1..n2)
-	if i%n3 === 0
-	result.push(i)
-	count += 1
-	end
+if i%n3 === 0
+result.push(i)
+count += 1
+end
 end
 puts "Numbers: #{result} & Counts: #{count}"
 
