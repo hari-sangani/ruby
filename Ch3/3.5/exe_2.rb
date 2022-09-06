@@ -3,17 +3,10 @@
 def reverse(arr)
 	i = 0
 	puts "Original Array : #{arr}" 
-
 	while i < (arr.length/2) do
-	arr[i], arr[arr.length - 1 -i] = arr[arr.length - 1 - i], arr[i]	
-=begin
-	temp = arr[i]
-	arr[i] = arr[arr.length - 1 - i]
-	arr[arr.length - 1 - i] = temp
-=end
-	i += 1
+		arr[i], arr[arr.length - 1 -i] = arr[arr.length - 1 - i], arr[i]	
+		i += 1
 	end
-
 	puts "Reversed Array : #{arr}"
 end
 
