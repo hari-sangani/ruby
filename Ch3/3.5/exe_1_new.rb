@@ -4,6 +4,7 @@ class AverageFunc
   def avg(num)
     sum = 0
     i = 0
+    # for i in num
     while i < num.length do
       num[i] = num[i].to_i
       sum += num[i]
