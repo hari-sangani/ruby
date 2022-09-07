@@ -1,6 +1,6 @@
 # Write a program to count the letters, spaces, numbers and other characters of an input string.
-
-def countChar(str)
+class StringFunc
+  def countChar(str)
     i = 0
     space = 0
     letter = 0
@@ -18,12 +18,15 @@ def countChar(str)
         end
     i += 1
     end
-puts "Space: #{space}"
-puts "Letter: #{letter}"
-puts "Number: #{number}"
-puts "Other Character: #{otherChar}"
+    puts "Space: #{space}"
+    puts "Letter: #{letter}"
+    puts "Number: #{number}"
+    puts "Other Character: #{otherChar}"
+  end
 end
 
 puts "Enter a String: "
 str = gets.chomp
-countChar(str)
+
+obj = StringFunc. new
+obj.countChar(str)

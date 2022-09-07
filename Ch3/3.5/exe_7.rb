@@ -1,17 +1,18 @@
 # Write a program which return true(boolean) for odd value & false(boolean) for even values.
 
-def checkOddEven(num)
-
-    if num.to_i%2 == 0
-    puts false
+class Check
+  def checkOddEven(num)
+    if num%2 == 0
+      puts false  # Even number
     else
-    puts true
+      puts true   # Odd number
     end
+  end
+end
     
-    end
-    
-    puts "Enter the number : "
-    num = gets.chomp
-    
-    checkOddEven(num)
+puts "Enter the number : "
+num = gets.chomp.to_i
+
+obj = Check. new
+obj.checkOddEven(num)
     

@@ -1,6 +1,6 @@
 # Write a program to reverse the array contents.
 
-class Array
+class ArrayFunc
 	def reverse(arr)
 		i = 0
 		puts "Original Array : #{arr}" 
@@ -12,6 +12,15 @@ class Array
 	end
 end
 
-arr = Array[1, 2, "RUBY", true, 0, "abcd", 34]
-arrObject = Array. new
+puts "Enter the no. of element for array : "
+ele = gets.chomp.to_i
+arr = Array.new
+j = 0
+while j < ele do
+	print "Element #{j}: "
+	arr.push(gets.chomp.to_i)
+	j += 1
+end
+
+arrObject = ArrayFunc. new
 arrObject.reverse(arr)
