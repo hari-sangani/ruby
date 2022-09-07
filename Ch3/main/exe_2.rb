@@ -22,10 +22,10 @@ class Dimention
   def validity()
     i = 0
     while i < $num_of_img do
-      if @@img_width[i] == @@img_height[i]
-        puts "Perfect"
-      elsif @@img_width[i] < @@min_l || @@img_height[i] < @@min_l
+      if @@img_width[i] < @@min_l || @@img_height[i] < @@min_l
         puts "Image not Valid"
+      elsif @@img_width[i] == @@img_height[i]
+        puts "Perfect"
       else
         puts "Crop and Accept"
       end
