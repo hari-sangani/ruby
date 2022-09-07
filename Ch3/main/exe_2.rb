@@ -4,27 +4,31 @@
 # Dimention of image denoted by W x H (Width x Height)
 
 class Dimention
-  @@min_l = 200
-  @@img_width = Array[]
-  @@img_height = Array[]
-
-  def initialize()
+  def initialize
+    @img_width = Array[]
+    @img_height = Array[]
+    
+    puts "Enter the minimun image dimention : "
+    @min_l = gets.chomp.to_i
+    puts "Enter the number of image you wants to upload : "
+    @num_of_img = gets.chomp.to_i
+    
     i = 0
-    while i < $num_of_img do
+    while i < @num_of_img do
       puts "Enter width and height of image #{i + 1}: "
       @user_input = gets.chomp.split(' ')
-      @@img_width.push(@user_input[0].to_i)
-      @@img_height.push(@user_input[1].to_i)
+      @img_width.push(@user_input[0].to_i)
+      @img_height.push(@user_input[1].to_i)
       i += 1 
     end
   end
 
-  def validity()
+  def validity
     i = 0
-    while i < $num_of_img do
-      if @@img_width[i] < @@min_l || @@img_height[i] < @@min_l
+    while i < @num_of_img do
+      if @img_width[i] < @min_l || @img_height[i] < @min_l
         puts "Image not Valid"
-      elsif @@img_width[i] == @@img_height[i]
+      elsif @img_width[i] == @img_height[i]
         puts "Perfect"
       else
         puts "Crop and Accept"
@@ -34,7 +38,5 @@ class Dimention
   end
 end
 
-puts "Enter the number of image you wants to upload : "
-$num_of_img = gets.chomp.to_i
-obj = Dimention.new()
-obj.validity()
+obj = Dimention.new
+obj.validity
