@@ -11,7 +11,7 @@ class FileList
     begin
       Dir.chdir(path)
       puts "You have been navigated to : #{Dir.pwd}"
-      puts "List of file/directory are : #{Dir["*"]}"
+      Dir["*"].each { |i| puts i }
     rescue
       puts "No such Path exists!"
     end
