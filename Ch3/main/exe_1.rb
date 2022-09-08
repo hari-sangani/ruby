@@ -49,9 +49,8 @@ class ShopOrder
         
         # if @order_details.key?@new_order[0]
         # else
-          @order_details.store(@new_order[0], @new_order[1].to_i)
+          @order_details.store(@new_order[0], @amt.push(@new_order[1].to_i))
           @order += 1
-          @amt.push(@new_order[1].to_i)
           @amt.sort!
           @min_order = @amt[0]
           @max_order = @amt[@amt.length - 1]
