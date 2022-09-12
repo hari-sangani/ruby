@@ -2,9 +2,12 @@
 
 class ShopOrder
   def initialize
+    @order = {}
+    @orders = []
+    @message = 'Today'
     puts "======================\n" + 
     "Welcome to My Shop\n" + 
-    "======================\n" +
+    "======================" +
     "Today Details\n" +
     "-----------------\n" + 
     "Total Order: \n" +
@@ -20,13 +23,13 @@ class ShopOrder
   end
   
   def display_msg
-    puts "\n#{@new_order[0]} Details\n" +
+    "\n#{@message} Details\n" +
     "-----------------\n" + 
-    "Total Order: #{@amt.length}\n" +
-    "Total Amount: #{@amt.sum}\n" +   
-    "Minimum Order: #{@amt.min}\n" + 
-    "Maximum Order: #{@amt.max}\n" + 
-    "Average Order: #{@amt.sum / @amt.length}\n" + 
+    "Total Order: #{@orders.length}\n" +
+    "Total Amount: #{@orders.sum}\n" +   
+    "Minimum Order: #{@orders.min}\n" + 
+    "Maximum Order: #{@orders.max}\n" + 
+    "Average Order: #{@orders.sum / @orders.length}\n" + 
     "======================\n" + 
     "1 Create New Order\n" + 
     "2 Print Day Details\n" +
@@ -35,39 +38,63 @@ class ShopOrder
   end
 
   def choose
-    @amt = []
-    @order_details = {}
-    while @user_choose = gets.chomp do
-      case @user_choose
+    while true do
+      case gets.chomp
       when '1'
         puts "Creating new order..."
-        @new_order = gets.chomp.split(' ')
+        value = gets.chomp
+        @orders = process_order(value)
+        puts display_msg
 
-        if @order_details.key?(@new_order[0])
-          @order_details[@new_order[0]] = @amt.push(@new_order[1].to_i)
-        else
-          @amt.clear
-          @order_details[@new_order[0]] = @amt.push(@new_order[1].to_i)
-        end
-        puts "#{@order_details}"
-        display_msg
-        
       when '2'
         puts 'Enter day : '
-        @day = gets.chomp
-        if @order_details.key?(@day)
-          @amt = @order_details[@day]
-          display_msg
-        else
-          puts "Order Not Found!!"  
-        end
+        value = gets.chomp
+        process_day(value)
 
       when '3'
-        puts "in 3"
+        puts 'Enter month : '
+        value = gets.chomp
+        process_month(value)
 
       else
         break
       end
+    end
+  end
+
+  def process_order(value)
+    date, amount = value.split(' ')
+    day, month, year = date.split('-')
+
+    @message = value 
+    @order[year] = {} if @order[year].nil?
+    @order[year][month] = {} if @order[year][month].nil?
+    @order[year][month][day] = [] if @order[year][month][day].nil?
+
+    @order[year][month][day] << amount.to_i
+  end
+
+  def process_day(value)
+    day, month, year = value.split('-')
+  
+    @message = value 
+    @orders = if @order[year].nil? or @order[year][month].nil? or @order[year][month][day].nil?
+      puts "Order Not Found!!"
+    else
+      @order[year][month][day]
+      puts display_msg
+    end
+  end
+
+  def process_month(value)
+    month, year = value.split('-')
+  
+    @message = value 
+    @orders = if @order[year].nil? or @order[year][month].nil?
+      puts "Order Not Found!!"
+    else
+      @output = @order[year][month]
+      puts @output
     end
   end
 end
