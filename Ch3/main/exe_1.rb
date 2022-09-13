@@ -7,29 +7,18 @@ class ShopOrder
     @message = 'Today'
     puts "======================\n" + 
     "Welcome to My Shop\n" + 
-    "======================\n" +
-    "Today Details\n" +
-    "-----------------\n" + 
-    "Total Order: \n" +
-    "Total Amount: \n" +   
-    "Minimum Order: \n" + 
-    "Maximum Order: \n" + 
-    "Average Order: \n" + 
-    "======================\n" + 
-    "1 Create New Order\n" + 
-    "2 Print Day Details\n" +
-    "3 Print Month Details\n" +
-    "How may I help you?(1, 2, 3 or quit)"
+    "======================" 
+    puts display_msg
   end
   
   def display_msg
-    "\n#{@message} Details\n" +
+    "#{@message} Details\n" +
     "-----------------\n" + 
     "Total Order: #{@orders.length}\n" +
     "Total Amount: #{@orders.sum}\n" +   
     "Minimum Order: #{@orders.min}\n" + 
     "Maximum Order: #{@orders.max}\n" + 
-    "Average Order: #{@orders.sum / @orders.length}\n" + 
+    "Average Order: #{@orders.sum / (@orders.length == 0 ? 1 : @orders.length)}\n" + 
     "======================\n" + 
     "1 Create New Order\n" + 
     "2 Print Day Details\n" +
@@ -44,22 +33,19 @@ class ShopOrder
         puts "Creating new order..."
         value = gets.chomp
         @orders = process_order(value)
-        puts display_msg
-
       when '2'
         puts 'Enter day : '
         value = gets.chomp
-        process_day(value)
-        puts handle       
-
+        process_day(value)       
       when '3'
         puts 'Enter month : '
         value = gets.chomp
         process_month(value)
-        puts handle
       else
         break
       end
+
+      puts display_msg
     end
   end
 
@@ -80,7 +66,7 @@ class ShopOrder
   
     @message = value 
     @orders = if @order[year].nil? or @order[year][month].nil? or @order[year][month][day].nil?
-      puts "Order Not Found!!"
+      []
     else
       @order[year][month][day]
     end
@@ -91,22 +77,10 @@ class ShopOrder
   
     @message = value 
     @orders = if @order[year].nil? or @order[year][month].nil?
-      puts "Order Not Found!!"
+      []
     else
-      @order[year][month].values.inject { |a, b| a + b}
+      @order[year][month].values.flatten
     end
-  end
-
-  def handle
-    begin 
-      display_msg
-    rescue
-      "\n======================\n" + 
-      "1 Create New Order\n" + 
-      "2 Print Day Details\n" +
-      "3 Print Month Details\n" +
-      "How may I help you?(1, 2, 3 or quit)"
-    end 
   end
 end
 
