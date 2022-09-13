@@ -5,7 +5,7 @@ class Check
     puts "Enter the number : "
     @num = gets.chomp.to_i
     
-    if @num % 2 == 0
+    if @num.even?
       puts false  # Even number
     else
       puts true   # Odd number
