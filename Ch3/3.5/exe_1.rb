@@ -1,24 +1,24 @@
+# frozen_string_literal: true
+
 # Write a method to compute the average of three numbers
 
+# Define class for Average
 class Average
-  # constructor method
-  def initialize(a, b, c)
-    @a, @b, @c = a.to_i, b.to_i, c.to_i
+  def initialize(num1, num2, num3)
+    @num1 = num1.to_i
+    @num2 = num2.to_i
+    @num3 = num3.to_i
   end
 
-  # Instance method
-  def avg()
-    (@a + @b + @c)/3
+  def avg
+    (@num1 + @num2 + @num3) / 3
   end
 end
 
-# User Input
-puts "Enter three numbers with space in between: "
-a, b, c = gets.chomp.split(" ")
+puts 'Enter three numbers with space in between: '
+num1, num2, num3 = gets.chomp.split(' ')
 
-# Create a Object 
-input = Average.new(a, b, c)
+input = Average.new(num1, num2, num3)
 
-#call instance methods
 avg = input.avg()
-puts "Average of #{a}, #{b} and #{c} is #{avg}"
+puts "Average of #{num1}, #{num2} and #{num3} is #{avg}"

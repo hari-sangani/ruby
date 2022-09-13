@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 # Write a method to compute the average of numbers
 
+# Define class for Average
 class AverageFunc
   def avg(num)
     i = 0
@@ -14,8 +17,8 @@ class AverageFunc
 end
 
 # User Input
-puts "Enter the numbers with space in between: "
-numArr = gets.chomp.split(" ")
+puts 'Enter the numbers with space in between: '
+num_arr = gets.chomp.split(' ')
 
-inputs = AverageFunc. new
-avg = inputs.avg(numArr)
+inputs = AverageFunc.new
+inputs.avg(num_arr)
