@@ -7,7 +7,7 @@ class ShopOrder
     @message = 'Today'
     puts "======================\n" + 
     "Welcome to My Shop\n" + 
-    "======================" +
+    "======================\n" +
     "Today Details\n" +
     "-----------------\n" + 
     "Total Order: \n" +
@@ -50,12 +50,13 @@ class ShopOrder
         puts 'Enter day : '
         value = gets.chomp
         process_day(value)
+        puts handle       
 
       when '3'
         puts 'Enter month : '
         value = gets.chomp
         process_month(value)
-
+        puts handle
       else
         break
       end
@@ -82,7 +83,6 @@ class ShopOrder
       puts "Order Not Found!!"
     else
       @order[year][month][day]
-      puts display_msg
     end
   end
 
@@ -93,9 +93,20 @@ class ShopOrder
     @orders = if @order[year].nil? or @order[year][month].nil?
       puts "Order Not Found!!"
     else
-      @output = @order[year][month]
-      puts @output
+      @order[year][month].values.inject { |a, b| a + b}
     end
+  end
+
+  def handle
+    begin 
+      display_msg
+    rescue
+      "\n======================\n" + 
+      "1 Create New Order\n" + 
+      "2 Print Day Details\n" +
+      "3 Print Month Details\n" +
+      "How may I help you?(1, 2, 3 or quit)"
+    end 
   end
 end
 
