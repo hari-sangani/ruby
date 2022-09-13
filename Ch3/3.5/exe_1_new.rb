@@ -2,15 +2,13 @@
 
 class AverageFunc
   def avg(num)
-    sum = 0
     i = 0
-    # for i in num
-    while i < num.length do
+    while i < num.length
       num[i] = num[i].to_i
-      sum += num[i]
       i += 1
     end
-    avg = sum / num.length
+
+    avg = num.sum / num.length
     puts "Average of #{num} is #{avg}"
   end
 end

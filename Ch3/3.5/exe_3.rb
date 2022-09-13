@@ -1,12 +1,25 @@
 # Write a program to find the common elements between two arrays of integers.
 class ArrayFunc
-	def commonElement(arr1, arr2)
+	def arr_input
+		puts "Enter the no. of element for array: "
+		ele = gets.chomp.to_i
+		arr = []
+		j = 0
+		while j < ele
+			print "Element #{j}: "
+			arr.push(gets.chomp.to_i)
+			j += 1
+		end
+		return arr
+	end
+
+	def common_element(arr1, arr2)
 		puts "Array 1: #{arr1}"
 		puts "Array 2: #{arr2}"
 		i = 0
-		while i < arr1.length do
+		while i < arr1.length
 			j = 0
-			while j < arr2.length do
+			while j < arr2.length
 				if arr2[j] == arr1[i] 
 					puts arr2[j]
 				end
@@ -17,25 +30,7 @@ class ArrayFunc
 	end
 end
 
-puts "Enter the no. of element for array 1 : "
-ele1 = gets.chomp.to_i
-arr1 = Array.new
-j = 0
-while j < ele1 do
-	print "Element #{j}: "
-	arr1.push(gets.chomp.to_i)
-	j += 1
-end
-
-puts "Enter the no. element for array 2: "
-ele2 = gets.chomp.to_i
-arr2 = Array.new
-j = 0
-while j < ele2 do
-	print "Element #{j}: "
-	arr2.push(gets.chomp.to_i)
-	j += 1
-end
-
 obj = ArrayFunc. new
-obj.commonElement(arr1, arr2)
+arr1 = obj.arr_input
+arr2 = obj.arr_input
+obj.common_element(arr1, arr2)

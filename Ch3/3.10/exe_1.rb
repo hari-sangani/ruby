@@ -5,11 +5,13 @@ class FileList
     root = "/home/scpl"
     Dir.chdir(root)
     puts "You are at root location : #{Dir.pwd}"
+    puts "Enter the Path you wants to navigate to : "
+    @path = gets.chomp
   end
 
-  def list(path)
+  def list
     begin
-      Dir.chdir(path)
+      Dir.chdir(@path)
       puts "You have been navigated to : #{Dir.pwd}"
       Dir["*"].each { |i| puts i }
     rescue
@@ -19,6 +21,4 @@ class FileList
 end
 
 my_list = FileList.new
-puts "Enter the Path you wants to navigate to : "
-user_path = gets.chomp
-my_list.list(user_path)
+my_list.list

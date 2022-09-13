@@ -27,7 +27,7 @@ class ShopOrder
   end
 
   def choose
-    while true do
+    loop do
       case gets.chomp
       when '1'
         puts "Creating new order..."
@@ -65,22 +65,24 @@ class ShopOrder
     day, month, year = value.split('-')
   
     @message = value 
-    @orders = if @order[year].nil? or @order[year][month].nil? or @order[year][month][day].nil?
-      []
-    else
-      @order[year][month][day]
-    end
+    @orders = 
+      if @order[year].nil? or @order[year][month].nil? or @order[year][month][day].nil?
+        []
+      else
+        @order[year][month][day]
+      end
   end
 
   def process_month(value)
     month, year = value.split('-')
   
     @message = value 
-    @orders = if @order[year].nil? or @order[year][month].nil?
-      []
-    else
-      @order[year][month].values.flatten
-    end
+    @orders = 
+      if @order[year].nil? or @order[year][month].nil?
+        []
+      else
+        @order[year][month].values.flatten
+      end
   end
 end
 

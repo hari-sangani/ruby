@@ -5,8 +5,8 @@
 
 class Dimention
   def initialize
-    @img_width = Array[]
-    @img_height = Array[]
+    @img_width = []
+    @img_height = []
     
     puts "Enter the minimun image dimention : "
     @min_l = gets.chomp.to_i
@@ -14,7 +14,7 @@ class Dimention
     @num_of_img = gets.chomp.to_i
     
     i = 0
-    while i < @num_of_img do
+    while i < @num_of_img
       puts "Enter width and height of image #{i + 1}: "
       @user_input = gets.chomp.split(' ')
       @img_width.push(@user_input[0].to_i)
@@ -25,8 +25,8 @@ class Dimention
 
   def validity
     i = 0
-    while i < @num_of_img do
-      if @img_width[i] < @min_l || @img_height[i] < @min_l
+    while i < @num_of_img
+      if @img_width[i] < @min_l or @img_height[i] < @min_l
         puts "Image not Valid"
       elsif @img_width[i] == @img_height[i]
         puts "Perfect"

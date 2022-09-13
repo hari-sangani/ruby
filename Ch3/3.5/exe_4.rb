@@ -4,7 +4,7 @@ class ArrayFunc
   def sort(arr)
     puts "Original Array : #{arr}"
     i = 0
-    while i < arr.length - 1  do
+    while i < arr.length - 1
       if arr[i] > arr[i+1]
         arr[i], arr[i+1] = arr[i+1], arr[i]
         i = 0
@@ -20,7 +20,7 @@ puts "Enter the no. of element for Numeric array : "
 eleNum = gets.chomp.to_i
 arrNum = Array.new
 j = 0
-while j < eleNum do
+while j < eleNum
 	print "Element #{j}: "
 	arrNum.push(gets.chomp.to_i)
 	j += 1
@@ -30,7 +30,7 @@ puts "Enter the no. of element for String array : "
 eleStr = gets.chomp.to_i
 arrStr = Array.new
 j = 0
-while j < eleStr do
+while j < eleStr
 	print "Element #{j}: "
 	arrStr.push(gets.chomp.to_s)
 	j += 1
