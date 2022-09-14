@@ -1,4 +1,6 @@
-puts "Enter the Number: "
+# frozen_string_literal: true
+
+puts 'Enter the Number: '
 num = gets.chomp
-numInMeter = num.to_i / 39.37
-puts numInMeter
+num_in_meter = num.to_i / 39.37
+puts num_in_meter
