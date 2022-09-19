@@ -43,10 +43,9 @@
             <div class="col-lg-6 text-end text-lg-right">
               <ul class="menu list-inline mb-0">
                 <li class="list-inline-item"><a href="login.html">Login</a></li>
-                <li class="list-inline-item"><a href="#">Register</a></li>
-                <li class="list-inline-item"><a href="#">Contact</a></li>
+                <li class="list-inline-item"><a href="contact.html">Contact</a></li>
                 <li class="list-inline-item">
-                  <a href="#">Recently viewed</a>
+                  <a href="customer_account.html">Account</a>
                 </li>
               </ul>
             </div>
@@ -58,7 +57,7 @@
       <!-- *** Navigavtion Bar *** -->
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="#">BoOkStoRE</a>
+          <a class="navbar-brand" href="index.html">BoOkStoRE</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -73,11 +72,17 @@
 
           <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Books</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Author</a></li>
               <li class="nav-item">
-                <a href="#" class="nav-link">About Us</a>
+                <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="list.html" class="nav-link">Books</a>
+              </li>
+              <li class="nav-item">
+                <a href="list.html" class="nav-link">Author</a>
+              </li>
+              <li class="nav-item">
+                <a href="about_us.html" class="nav-link">About Us</a>
               </li>
             </ul>
           </div>
@@ -96,12 +101,14 @@
                 </div>
               </form>
             </div>
-            <div
-              id="basket-overview"
-              class="navbar-collapse collapse d-none d-lg-block"
-            >
-              <a href="#" class="btn btn-primary navbar-btn"
-                ><i class="fa fa-shopping-cart"> Cart</i></a
+            <div id="wishlist-overview" class="me-3">
+              <a href="wishlist.html" class="btn btn-primary navbar-btn"
+                ><i class="fa fa-heart"></i
+              ></a>
+            </div>
+            <div id="basket-overview">
+              <a href="basket.html" class="btn btn-primary navbar-btn"
+                ><i class="fa fa-shopping-cart"></i></a
               >
             </div>
           </div>
@@ -128,38 +135,34 @@
                 data-bs-target="#carouselIndicators"
                 data-bs-slide-to="0"
                 class="active"
-                aria-current="true"
-                aria-label="Slide 1"
               ></button>
               <button
                 type="button"
                 data-bs-target="#carouselIndicators"
                 data-bs-slide-to="1"
-                aria-label="Slide 2"
               ></button>
               <button
                 type="button"
                 data-bs-target="#carouselIndicators"
                 data-bs-slide-to="2"
-                aria-label="Slide 3"
               ></button>
             </div>
             <div class="carousel-inner">
-              <div class="carousel-item active">
+              <div class="carousel-item active" data-bs-interval="2000">
                 <img
                   src="images/main-slider1.jpg"
                   class="d-block w-100"
                   alt="img-fluid"
                 />
               </div>
-              <div class="carousel-item">
+              <div class="carousel-item" data-bs-interval="2000">
                 <img
                   src="images/main-slider2.jpg"
                   class="d-block w-100"
                   alt="img-fluid"
                 />
               </div>
-              <div class="carousel-item">
+              <div class="carousel-item" data-bs-interval="2000">
                 <img
                   src="images/main-slider3.jpg"
                   class="d-block w-100"
@@ -236,11 +239,12 @@
             <div class="row text-center">
               <div class="col-md-3">
                 <div class="card">
-                  <img
-                    src="images/product1.jpg"
-                    class="card-img-top"
-                    alt="product_img"
-                  />
+                  <a href="details.html">
+                    <img
+                      src="images/product1.jpg"
+                      class="card-img-top"
+                      alt="product_img"
+                  /></a>
                   <div class="card-body">
                     <h5 class="card-title">Book 1</h5>
                     <p class="card-text author-name">Author Name</p>
@@ -252,11 +256,13 @@
 
               <div class="col-md-3">
                 <div class="card">
-                  <img
-                    src="images/product2.jpg"
-                    class="card-img-top"
-                    alt="product_img"
-                  />
+                  <a href="details.html">
+                    <img
+                      src="images/product2.jpg"
+                      class="card-img-top"
+                      alt="product_img"
+                    />
+                  </a>
                   <div class="card-body">
                     <h5 class="card-title">Book 2</h5>
                     <p class="card-text author-name">Author Name</p>
@@ -268,11 +274,12 @@
 
               <div class="col-md-3">
                 <div class="card">
-                  <img
-                    src="images/product3.jpg"
-                    class="card-img-top"
-                    alt="product_img"
-                  />
+                  <a href="details.html">
+                    <img
+                      src="images/product3.jpg"
+                      class="card-img-top"
+                      alt="product_img"
+                  /></a>
                   <div class="card-body">
                     <h5 class="card-title">Book 3</h5>
                     <p class="card-text author-name">Author Name</p>
@@ -284,11 +291,12 @@
 
               <div class="col-md-3">
                 <div class="card">
-                  <img
-                    src="images/product1.jpg"
-                    class="card-img-top"
-                    alt="product_img"
-                  />
+                  <a href="details.html">
+                    <img
+                      src="images/product1.jpg"
+                      class="card-img-top"
+                      alt="product_img"
+                  /></a>
                   <div class="card-body">
                     <h5 class="card-title">Book 1</h5>
                     <p class="card-text author-name">Author Name</p>
@@ -314,10 +322,10 @@
             <div class="col-lg-3 col-md-6">
               <h4 class="mb-3">Pages</h4>
               <ul class="list-unstyled">
-                <li><a href="#">About us</a></li>
+                <li><a href="about_us.html">About us</a></li>
                 <li><a href="#">Terms and conditions</a></li>
                 <li><a href="#">FAQ</a></li>
-                <li><a href="#">Contact us</a></li>
+                <li><a href="contact.html">Contact us</a></li>
               </ul>
               <hr />
               <h4 class="mb-3">User section</h4>
@@ -347,7 +355,7 @@
                 >
               </p>
               <ul>
-                <a href="#">Go to contact page</a>
+                <a href="contact.html">Go to contact page</a>
               </ul>
               <hr class="d-block d-md-none" />
             </div>
